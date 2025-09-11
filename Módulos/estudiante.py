@@ -63,6 +63,7 @@ class Estudiant:
     def pagarPension(self):
         self.pensionPa=True
         print("Usted pagó la pensión")
+
     @classmethod
     def cambiarInstitución(cls):
         nueva_institucion = input("Ingrese a que institución quiere cambiarse:")
@@ -74,6 +75,7 @@ class Estudiant:
             print("Usted es mayor de edad")
         else:
             print("Usted es menor de edad")
+            
     @staticmethod
     def promedio_notas():
         cant = int(input("Ingrese la cantidad de notas:"))
