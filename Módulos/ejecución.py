@@ -1,7 +1,7 @@
-from estudiante import Estudiante
-est=Estudiante()
-est.ingresarDatos()
-est.imprimirDatos()
-est.matricular()
-est.pagarPension()
-est.imprimirDatos()
+from estudiante import Estudiant
+estu=Estudiant()
+estu.ingresarDatos()
+estu.imprimirDatos()
+estu.matricular()
+estu.pagarPension()
+estu.imprimirDatos()

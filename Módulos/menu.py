@@ -1,4 +1,4 @@
-from estudiante import Estudiante
+from estudiante import Estudiant
 def verMenu():
     print("MENU MATRICULAS")
     print("1. Ingresar datos")
@@ -7,7 +7,7 @@ def verMenu():
     print("4. Pagar pensión")
     print("5. Salir")
 def main():
-    est=Estudiante()
+    est=Estudiant()
     while True:
         verMenu()
         opcion=int(input("Selecciones una opción: "))
