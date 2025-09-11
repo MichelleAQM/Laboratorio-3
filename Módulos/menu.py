@@ -5,8 +5,9 @@ def verMenu():
     print("2. Mostrar datos")
     print("3. Matricularse")
     print("4. Pagar pensión")
+    print("6. Verificar si es mayor de edad")
     print("5. Cambiar de institución")
-    print("6. Salir")
+    print("7. Salir")
 def main():
     est=Estudiant()
     while True:
@@ -21,8 +22,10 @@ def main():
         elif opcion==4:
             est.pagarPension()
         elif opcion==5:
-            est.cambiarInstitución()
+            est.mayorEdad()
         elif opcion==6:
+            est.cambiarInstitución()
+        elif opcion==7:
             print("Saliendo")
             break
         else:

@@ -1,4 +1,5 @@
 class Estudiant:
+    institucion = "Universidad Católica de Santa María"
     def __init__(self,nombre="",edad=0,carrera=""):
         self._nombre=nombre
         self._edad=edad
@@ -43,6 +44,8 @@ class Estudiant:
         print("Nombre: ",self._nombre)
         print("Edad: ",self._edad)
         print("Carrera: ",self._carrera)
+        print("Institución:",Estudiant.institucion)
+        Estudiant.mayorEdad(self._edad)
         if self.matriculado:
             print("Matriculado: Si")
         else:

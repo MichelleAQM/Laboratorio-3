@@ -10,3 +10,4 @@ Estudiant.cambiarInstitución()
 print("ESTUDIANTES REGISTRADOS")
 for est in lista:
     est.imprimirDatos()
+    Estudiant.mayorEdad(est.edad)
