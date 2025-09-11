@@ -4,7 +4,7 @@ class Estudiant:
         self._edad=edad
         self._carrera=carrera
         self.matriculado=False
-        self._ensionPa=False
+        self.pensionPa=False
 
     def getnombre(self):
         return self._nombre
@@ -59,3 +59,13 @@ class Estudiant:
     def pagarPension(self):
         self.pensionPa=True
         print("Usted pagó la pensión")
+    @classmethod
+    def cambiarInstitución(cls,nueva_institucion):
+        cls.institucion = nueva_institucion
+        print(f"Su nueva institución es:.{cls.institucion}")
+    @classmethod
+    def mayorEdad(cls,edad):
+        if edad >= 18:
+            print("Usted es mayor de edad")
+        else:
+            print("Usted es menor de edad")
