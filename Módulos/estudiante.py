@@ -73,3 +73,19 @@ class Estudiant:
             print("Usted es mayor de edad")
         else:
             print("Usted es menor de edad")
+    @staticmethod
+    def promedio_notas():
+        cant = int(input("Ingrese la cantidad de notas:"))
+        notas = []
+        for i in range(cant):
+            nota = int(input(f"Ingrese nota {i+1}:"))
+            notas.append(nota)
+        promedio = sum(notas)/cant
+        print("Su promedio es:",promedio)
+    @staticmethod
+    def verificarCorreo():
+        correo = input("Ingrese su correo:")
+        if "@" in correo and "." in correo and "ucsm" in correo:
+            print(f"Su correo {correo} es válido")
+        else:
+            print(f"Su correo {correo} no es válido")
