@@ -3,8 +3,8 @@ class Estudiant:
         self._nombre=nombre
         self._edad=edad
         self._carrera=carrera
-        self._matriculado=False
-        self._pensionPa=False
+        self.matriculado=False
+        self._ensionPa=False
 
     def getnombre(self):
         return self._nombre
@@ -22,7 +22,7 @@ class Estudiant:
         return self._carrera
     def setcarrera(self,carrera=None):
         self._carrera = carrera
-    edad = property(fget = getcarrera,fset=setcarrera,doc=None)
+    carrera = property(fget = getcarrera,fset=setcarrera,doc=None)
 
     def ingresarDatos(self,nombre=None, edad=None, carrera=None):
         if nombre == None:
