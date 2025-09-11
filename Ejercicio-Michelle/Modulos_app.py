@@ -21,6 +21,8 @@ class Producto():
             print("El precio no puede ser negativo")
         else:
             self._precio = precio
+    def MostrarProductos(self):
+        f
     cantidad = property(fget = getCantidad,fset=setCantidad)
     precio = property(fget=getPrecio,fset=setPrecio)
 
@@ -53,27 +55,32 @@ class Cliente():
     edad = property(fget = getEdad,fset=setEdad)
     DNI = property(fget=getDNI,fset=setDNI)
 
-class Venta(Cliente,Producto):
-    def __init__(self, nombreC, edad, DNI,nombreP,cantidad,precio,total,metodoPago):
-        Cliente().__init__(nombreC, edad, DNI)
-        Producto().__init__(nombreP, cantidad, precio)
-        self.total = total
-        self.metodoPago = metodoPago    
-
-    def getTotal(self):
-        return self._edad
-    def getmetodoPago(self):
-        return self._DNI
+class Venta():
+    def __init__(self,cliente,metodo_pago):
+        self.cliente = cliente           
+        self.metodo_pago = metodo_pago
+        self.productos = []
     
-    def setEdad(self,edad = None):
-        if edad <0:
-            print("Su edad no puede ser negativa")
-        elif edad <18:
-            print("Usted es menor de edad")
+    def agregar_producto(self, producto, cantidad_comprada):
+        if cantidad_comprada <= Producto.cantidad:
+            self.productos.append((producto, cantidad_comprada))
+            Producto.cantidad -= cantidad_comprada  
         else:
-            self._edad = edad
-    def setDNI(self,DNI = None):
-        if len(DNI)==8 and DNI.isdigit() :
-            print("Se ingreso correctamente su DNI")
-            self._DNI = DNI
+            print(f"No hay suficiente stock de {Producto.getNombreP()}")
 
+    def calcular_total(self):
+        total = 0
+        for prod, cant in self.productos:
+            total += prod.precio * cant
+        return total
+
+    def mostrar_factura(self):
+        print("===== FACTURA =====")
+        print(f"Cliente: {self.cliente.getNombreC()}")
+        print(f"DNI: {self.cliente.getDNI()}")
+        print("Productos:")
+        for prod, cant in self.productos:
+            print(f"{prod.getNombreP()} - Cantidad: {cant} - Subtotal: S/{prod.precio*cant}")
+        print(f"Total a pagar: S/{self.calcular_total()}")
+        print(f"Método de pago: {self.metodo_pago}")
+        print("==================")
