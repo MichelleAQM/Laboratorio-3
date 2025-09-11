@@ -54,6 +54,7 @@ class Estudiant:
             print("Pensión pagada: Si")
         else:
             print("Pensión pagada: No")
+        
 
     def matricular(self):
         self.matriculado=True
