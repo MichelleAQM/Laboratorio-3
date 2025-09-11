@@ -6,6 +6,7 @@ for i in range(n):
     est=Estudiant()
     est.ingresarDatos()
     lista.append(est)
+Estudiant.cambiarInstitución()
 print("ESTUDIANTES REGISTRADOS")
 for est in lista:
     est.imprimirDatos()

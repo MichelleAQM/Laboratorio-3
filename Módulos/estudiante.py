@@ -60,7 +60,8 @@ class Estudiant:
         self.pensionPa=True
         print("Usted pagó la pensión")
     @classmethod
-    def cambiarInstitución(cls,nueva_institucion):
+    def cambiarInstitución(cls):
+        nueva_institucion = input("Ingrese a que institución quiere cambiarse:")
         cls.institucion = nueva_institucion
         print(f"Su nueva institución es:.{cls.institucion}")
     @classmethod
