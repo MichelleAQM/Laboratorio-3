@@ -1,6 +1,7 @@
 from estudiante import Estudiant
 lista=[]
-for i in range(4):
+n = int(input("¿Cuántos estudiantes registrará?: "))
+for i in range(n):
     print("Registro estudiante ",i+1)
     est=Estudiant()
     est.ingresarDatos()
