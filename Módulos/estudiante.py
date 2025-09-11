@@ -1,11 +1,26 @@
 class Estudiant:
     def __init__(self,nombre="",edad=0,carrera=""):
-        self.nombre=nombre
-        self.edad=edad
-        self.carrera=carrera
-        self.matriculado=False
-        self.pensionPa=False
+        self._nombre=nombre
+        self._edad=edad
+        self._carrera=carrera
+        self._matriculado=False
+        self._pensionPa=False
 
+    def getnombre(self):
+        return self._nombre
+    def setnombre(self,nombre=None):
+        self._nombre = nombre
+
+    def getedad(self):
+        return self._nombre
+    def setedad(self,nombre=None):
+        self._nombre = nombre
+
+    def getcarrera(self):
+        return self._nombre
+    def setcarrera(self,nombre=None):
+        self._nombre = nombre
+        
     def ingresarDatos(self):
         self.nombre=input("Ingrese su nombre: ")
         self.edad=int(input("Ingrese su edad: "))
