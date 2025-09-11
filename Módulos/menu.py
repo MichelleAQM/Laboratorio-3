@@ -10,7 +10,7 @@ def main():
     est=Estudiant()
     while True:
         verMenu()
-        opcion=int(input("Selecciones una opción: "))
+        opcion=int(input("Seleccione una opción: "))
         if opcion==1:
             est.ingresarDatos()
         elif opcion==2:
