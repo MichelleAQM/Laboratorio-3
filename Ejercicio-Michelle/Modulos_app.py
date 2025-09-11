@@ -22,7 +22,8 @@ class Producto():
         else:
             self._precio = precio
     def MostrarProductos(self):
-        f
+        print(f"Producto: {self.getNombreP()} - Cantidad: {self.cantidad} - Precio: S/{self.precio}")
+
     cantidad = property(fget = getCantidad,fset=setCantidad)
     precio = property(fget=getPrecio,fset=setPrecio)
 
@@ -62,11 +63,11 @@ class Venta():
         self.productos = []
     
     def agregar_producto(self, producto, cantidad_comprada):
-        if cantidad_comprada <= Producto.cantidad:
+        if cantidad_comprada <= producto.cantidad:
             self.productos.append((producto, cantidad_comprada))
-            Producto.cantidad -= cantidad_comprada  
+            producto.cantidad -= cantidad_comprada  
         else:
-            print(f"No hay suficiente stock de {Producto.getNombreP()}")
+            print(f"No hay suficiente stock de {producto.getNombreP()}")
 
     def calcular_total(self):
         total = 0
@@ -75,7 +76,7 @@ class Venta():
         return total
 
     def mostrar_factura(self):
-        print("===== FACTURA =====")
+        print("---------------- FACTURA ----------------")
         print(f"Cliente: {self.cliente.getNombreC()}")
         print(f"DNI: {self.cliente.getDNI()}")
         print("Productos:")
@@ -83,4 +84,4 @@ class Venta():
             print(f"{prod.getNombreP()} - Cantidad: {cant} - Subtotal: S/{prod.precio*cant}")
         print(f"Total a pagar: S/{self.calcular_total()}")
         print(f"Método de pago: {self.metodo_pago}")
-        print("==================")
+        print("-----------------------------------------")
