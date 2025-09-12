@@ -44,7 +44,7 @@ class equipo():
         print(self.nombre, "recibió una bonificación de", self.bonificacion, "fuerza")
 
 class enemigosBrainrots():
-    def __init__(self, nombreEnemigo="Brainrot Supremo", salud=100, fuerza=12):
+    def __init__(self, nombreEnemigo="Supremacini Mauricini", salud=100, fuerza=12):
         self.nombreEnemigo = nombreEnemigo
         self.salud = salud
         self.fuerza = fuerza
