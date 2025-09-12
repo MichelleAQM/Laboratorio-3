@@ -1,4 +1,4 @@
-class Cliente:
+class cliente:
     def __init__(self,dni,nombre):
         self.__dni=dni
         self.__nombre=nombre
@@ -10,4 +10,4 @@ class Cliente:
         self.__nombre=nombre2
     def mostrar(self):
         print(f"{self.__nombre} DNI: {self.__dni}")
-        
+
