@@ -23,9 +23,9 @@ def menu_juego():
         print("4. Iniciar batalla")
         print("5. Salir")
 
-        opcion = input("Seleccione una opción: ")
+        opcion = int(input("Seleccione una opción: "))
 
-        if opcion == "1":
+        if opcion == 1:
             print("Estadísticas del Jugador")
             print("Nombre:", jugador.getNombre())
             print("Salud:", jugador.getSalud())
@@ -36,7 +36,6 @@ def menu_juego():
                 print("Bonificación de fuerza:", jugador.equipo.bonificacion + 10)
             else:
                 print("Equipo: Ninguno")
-
             if jugador.habilidades:
                 print("Habilidades:")
                 for h in jugador.habilidades:
@@ -44,13 +43,13 @@ def menu_juego():
             else:
                 print("Habilidades: Ninguna")
 
-        elif opcion == "2":
+        elif opcion == 2:
             eq = input("Ingrese el nombre del equipo: ")
             bonif = int(input("Ingrese la bonificación base del equipo: "))
             nuevo_equipo = equipo(eq, bonif)
             jugador.asignar_equipo(nuevo_equipo)
 
-        elif opcion == "3":
+        elif opcion == 3:
             print("Estadísticas del Enemigo")
             print("Nombre:", enemigoFinal.nombreEnemigo)
             print("Salud:", enemigoFinal.salud)
@@ -63,11 +62,11 @@ def menu_juego():
             else:
                 print("Habilidades: Ninguna")
 
-        elif opcion == "4":
+        elif opcion == 4:
             batalla = Batalla(jugador, enemigoFinal)
             batalla.inicia()
 
-        elif opcion == "5":
+        elif opcion == 5:
             print("Saliendo del juego...")
             break
 
