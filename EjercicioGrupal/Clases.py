@@ -20,7 +20,7 @@ class Personaje():
     def setFuerza(self,fuerza = None):
         self.fuerza=fuerza
     
-    def agregar_habilades(self,habilidad):
+    def agregar_habilidades(self,habilidad):
         self.habilidades.append(habilidad)
     
     def vivo_o_muerto(self):
@@ -29,6 +29,10 @@ class Personaje():
         else:
             print(self.nombreJugador,"ha sido derrotado.")
             return False
+    def asignar_equipo(self, equipo):
+        self.equipo = equipo
+        print(self.nombreJugador, "obtuvo el equipo", equipo.nombre, "(+", equipo.bonificacion, "fuerza).")
+
     def atacar(self,enemigo):
         print(self.nombreJugador,"ataco a",enemigo.nombreEnemigo)
         enemigo.salud = enemigo.salud - self.fuerza
@@ -48,12 +52,17 @@ class enemigosBrainrots():
         self.salud = salud
         self.fuerza = fuerza
         self.habilidades = []
+
     def vivo_o_muerto(self):
         if self.salud > 0:
             return True
         else:
             print("¡Felicidades derrotaste a",self.nombreEnemigo,"!")
             return False
+        
+    def agregar_habilidades(self,habilidad):
+        self.habilidades.append(habilidad)
+
     def atacar(self,personaje):
         print(self.nombreEnemigo,"ataca a",personaje.getNombre())
         personaje.salud = personaje.salud - self.fuerza
