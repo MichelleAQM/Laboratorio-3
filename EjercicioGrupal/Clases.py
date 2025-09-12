@@ -49,4 +49,10 @@ class enemigosBrainrots():
             return True
         else:
             print("¡Felicidades derrotaste a",self.nombreEnemigos,"!")
+    # def atarcar
+
+class habilidades():
+    def __init__(self,nombre,daño):
+        self.nombre = nombre
+        self.daño = daño
     
