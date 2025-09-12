@@ -13,7 +13,7 @@ class Venta:
     def get_total(self):
         return self.__total
     def mostrar(self):
-        print(f"Cliente: {self.__cliente.get_nombre()}|"
-              f"Producto: {self.__producto.get_nombre()}|"
-              f"Cantidad: {self.__cantidad}|"
-              f"Total: S/{self.__total}")
+        return (f"Cliente: {self.__cliente.get_nombre()}|"
+                f"Producto: {self.__producto.get_nombreProd()}|"
+                f"Cantidad: {self.__cantidad}|"
+                f"Total: S/{self.__total}")
