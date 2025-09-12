@@ -11,10 +11,5 @@ class producto:
             self.__precio=precio2
         else:
             print("Precio inválido")
-    def set_cantidad(self,cantidad2):
-        if cantidad2>=0:
-            self.__cantidad=cantidad2
-        else:
-            print("Cantidad inválida")
     def mostrar(self):
         print(f"Producto: {self.__nombreProd} - Precio: S/{self.__precio}")
