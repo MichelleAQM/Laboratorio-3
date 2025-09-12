@@ -1,8 +1,10 @@
 class Producto():
+    productos_disponibles = []
     def __init__(self,nombreP,cantidad,precio):
         self._nombreP = nombreP
         self._cantidad = cantidad
         self._precio = precio
+        Producto.productos_disponibles.append(self)
     
     def getNombreP(self):
         return self._nombreP
@@ -21,11 +23,21 @@ class Producto():
             print("El precio no puede ser negativo")
         else:
             self._precio = precio
-    def MostrarProductos(self):
-        print(f"Producto: {self.getNombreP()} - Cantidad: {self.cantidad} - Precio: S/{self.precio}")
 
     cantidad = property(fget = getCantidad,fset=setCantidad)
     precio = property(fget=getPrecio,fset=setPrecio)
+
+    def MostrarProductos(self):
+        print(f"Producto: {self.getNombreP()} - Cantidad: {self.cantidad} - Precio: S/{self.precio}")
+    
+    @classmethod
+    def mostrar_todos_productos(cls):
+        contador = 1
+        print("---------------- PRODUCTOS DISPONIBLES ----------------")
+        for prod in cls.productos_disponibles:
+            print(f"{contador}. {prod.getNombreP()} - Cantidad: {prod.getCantidad()} - Precio: S/{prod.getPrecio()}")
+            contador += 1
+        print("-------------------------------------------------------")
 
 class Cliente():
     def __init__(self,nombreC,edad,DNI):
@@ -65,7 +77,7 @@ class Venta():
     def agregar_producto(self, producto, cantidad_comprada):
         if cantidad_comprada <= producto.cantidad:
             self.productos.append((producto, cantidad_comprada))
-            producto.cantidad -= cantidad_comprada  
+            producto.cantidad -= cantidad_comprada
         else:
             print(f"No hay suficiente stock de {producto.getNombreP()}")
 
