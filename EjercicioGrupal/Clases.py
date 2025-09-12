@@ -27,14 +27,27 @@ class Personaje():
             return False
     def asignar_equipo(self, equipo):
         self.equipo = equipo
-        self.fuerza += equipo.bonificacion + 10   # suma el bonus + 10 extra
+        self.fuerza += equipo.bonificacion + 10
         print(self.nombreJugador, "obtuvo el equipo", equipo.nombre, 
               "(+", equipo.bonificacion + 10, "fuerza total extra).")
-    def atacar(self, enemigo):
-        print(self.nombreJugador, "atacó a", enemigo.nombreEnemigo)
-        enemigo.salud = enemigo.salud - self.fuerza
-        print(enemigo.nombreEnemigo, "quedó con", enemigo.salud, "de vida")
-
+    def usar_habilidad(self, enemigo):
+        if not self.habilidades:
+            print("No tienes habilidades disponibles.")
+            return
+        print("\nElige una habilidad:")
+        for i, h in enumerate(self.habilidades):
+            print(i+1, "-", h.nombre, "(Daño:", h.daño, ")")
+        try:
+            op = int(input("Opción: "))
+            if 1 <= op <= len(self.habilidades):
+                habilidad = self.habilidades[op-1]
+                print(self.nombreJugador, "usó", habilidad.nombre, "contra", enemigo.nombreEnemigo)
+                enemigo.salud -= abs(habilidad.daño)
+                print(enemigo.nombreEnemigo, "quedó con", enemigo.salud, "de vida")
+            else:
+                print("Opción inválida, pierdes el turno.")
+        except ValueError:
+            print("Entrada no válida, pierdes el turno.")
 class equipo():
     def __init__(self, nombre="Espada básica", bonificacion=5):
         self.nombre = nombre
@@ -58,23 +71,31 @@ class enemigosBrainrots():
     def agregar_habilidades(self, habilidad):
         self.habilidades.append(habilidad)
     def atacar(self, personaje):
-        print(self.nombreEnemigo, "ataca a", personaje.getNombre())
-        personaje.salud = personaje.salud - self.fuerza
-        print(personaje.getNombre(), "quedó con", personaje.salud, "de vida")
+        if self.habilidades:
+            import random
+            habilidad = random.choice(self.habilidades)
+            print(self.nombreEnemigo, "usó", habilidad.nombre, "contra", personaje.getNombre())
+            personaje.salud -= abs(habilidad.daño)
+            print(personaje.getNombre(), "quedó con", personaje.salud, "de vida")
+        else:
+            print(self.nombreEnemigo, "atacó a", personaje.getNombre())
+            personaje.salud -= self.fuerza
+            print(personaje.getNombre(), "quedó con", personaje.salud, "de vida")
 
 class habilidades():
     def __init__(self, nombre, daño):
         self.nombre = nombre
         self.daño = daño
+
 class Batalla():
     def __init__(self, personaje, brainrot):
         self.personaje = personaje
         self.brainrot = brainrot
     def inicia(self):
-        print("Empieza la batalla")
+        print("\n--- Empieza la batalla ---")
         print(self.personaje.getNombre(), "VS", self.brainrot.nombreEnemigo)
         while self.personaje.vivo_o_muerto() and self.brainrot.vivo_o_muerto():
-            self.personaje.atacar(self.brainrot)
+            self.personaje.usar_habilidad(self.brainrot)
             if self.brainrot.salud <= 0:
                 break
             self.brainrot.atacar(self.personaje)
