@@ -1,14 +1,9 @@
 class venta:
-    def __init__(self,cliente, producto, cantidad):
-        self.__cliente=cliente
-        self.__producto=producto
-        self.__cantidad=cantidad
-        if cantidad<=producto.get_cantidad():
-            self.__total=producto.get_precio()*cantidad
-            producto.set_cantidad(producto.get_cantidad()-cantidad)
-        else:
-            self.__total=0
-            print("No hay suficientes productos para esta venta")
+    def __init__(self, cliente, producto, cantidad):
+        self.__cliente = cliente
+        self.__producto = producto
+        self.__cantidad = cantidad
+        self.__total = producto.get_precio() * cantidad
     def get_cliente(self):
         return self.__cliente
     def get_producto(self):
