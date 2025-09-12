@@ -1,11 +1,18 @@
 class Estudiant:
     institucion = "Universidad Católica de Santa María"
+    def new (cls):
+        print ("Nuevo estudiante")
+        return cls()
+    
     def __init__(self,nombre="",edad=0,carrera=""):
         self._nombre=nombre
         self._edad=edad
         self._carrera=carrera
         self.matriculado=False
         self.pensionPa=False
+
+    def __del__(self):
+        print(f"El estudiante {self._nombre} ha sido eliminado de la memoria.")
 
     def getnombre(self):
         return self._nombre
