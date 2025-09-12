@@ -1,5 +1,7 @@
 class Estudiant:
     institucion = "Universidad Católica de Santa María"
+    
+    @classmethod
     def new (cls):
         print ("Nuevo estudiante")
         return cls()
