@@ -3,7 +3,7 @@ def menu_juego():
     print("............| Pelea contra el Brainrot |............")
     nombre = input("Ingrese el nombre de su personaje: ")
     jugador = Personaje(nombre, 120, 10)
-    enemigoFinal=enemigosBrainrots("Brainrot Supremo",100,12)
+    enemigoFinal=enemigosBrainrots("Tung tung tung Sahur",100,12)
     while True:
         print("1. Ver estadísticas del jugador")
         print("2. Asignar equipo")
