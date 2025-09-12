@@ -99,3 +99,4 @@ class Batalla():
             if self.brainrot.salud <= 0:
                 break
             self.brainrot.atacar(self.personaje)
+            
