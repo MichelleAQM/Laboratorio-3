@@ -29,7 +29,7 @@ class Personaje():
         else:
             print(self.nombreJugador,"ha sido derrotado.")
             return False
-    #def atacar:
+    def atacar(self,personaje):
 
 class equipo():
     def __init__(self,nombre,bonificacion):
@@ -70,3 +70,8 @@ class Batalla():
             print(self.personaje.getNombre,"ataco a",self.brainrot.nombreEnemigo)
             self.brainrot.salud = self.brainrot.salud - self.personaje.fuerza
             print(self.brainrot.nombreEnemigo,"quedo con",self.brainrot.salud,"de vida")
+            if self.brainrot.salud <=0:
+                break
+            print(self.brainrot.nombreEnemigo,"ataco a",self.personaje.getNombre())
+            self.personaje.salud = self.personaje.salud - self.brainrot.fuerza
+            print(self.personaje.getNombre(),"quedo con",self.personaje.salud,"de vida")
