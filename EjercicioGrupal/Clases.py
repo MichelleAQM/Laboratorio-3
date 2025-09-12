@@ -28,4 +28,25 @@ class Personaje():
             return True
         else:
             return False
+    #def atacar:
 
+class equipo():
+    def __init__(self,nombre,bonificacion):
+        self.nombre = nombre
+        self.bonificacion = bonificacion
+
+    def pantalla(self):
+        print(self.nombre,"recibio una boniciacion de",self.bonificacion,"fuerza")
+
+class enemigosBrainrots():
+    def __init__(self,nombreEnemigos,salud,fuerza):
+        self.nombreEnemigos = nombreEnemigos
+        self.salud = salud
+        self.fuerza = fuerza
+        self.habilidades = []
+    def vivo_o_muerto(self):
+        if self.salud > 0:
+            return True
+        else:
+            print("¡Felicidades derrotaste a",self.nombreEnemigos,"!")
+    
