@@ -1,6 +1,6 @@
-from Producto import producto
-from Cliente import cliente
-from Venta import venta
+from Producto import Producto
+from Cliente import Cliente
+from Venta import Venta
 
 productos=[]
 clientes=[]
