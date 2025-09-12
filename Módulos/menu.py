@@ -7,7 +7,9 @@ def verMenu():
     print("4. Pagar pensión")
     print("5. Verificar si es mayor de edad")
     print("6. Cambiar de institución")
-    print("7. Salir")
+    print("7. Calcular promedio")
+    print("8. Verificar correo")    
+    print("9. Salir")
 def main():
     est=Estudiant()
     while True:
@@ -26,6 +28,10 @@ def main():
         elif opcion==6:
             est.cambiarInstitución()
         elif opcion==7:
+            est.promedio_notas()
+        elif opcion==8:
+            est.verificarCorreo()
+        elif opcion==9:
             print("Saliendo")
             break
         else:

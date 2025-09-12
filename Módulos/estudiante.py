@@ -1,11 +1,20 @@
 class Estudiant:
     institucion = "Universidad Católica de Santa María"
+    
+    @classmethod
+    def new (cls):
+        print ("Nuevo estudiante")
+        return cls()
+    
     def __init__(self,nombre="",edad=0,carrera=""):
         self._nombre=nombre
         self._edad=edad
         self._carrera=carrera
         self.matriculado=False
         self.pensionPa=False
+
+    def __del__(self):
+        print(f"El estudiante {self._nombre} ha sido eliminado de la memoria.")
 
     def getnombre(self):
         return self._nombre
@@ -54,6 +63,7 @@ class Estudiant:
             print("Pensión pagada: Si")
         else:
             print("Pensión pagada: No")
+        
 
     def matricular(self):
         self.matriculado=True
@@ -62,6 +72,7 @@ class Estudiant:
     def pagarPension(self):
         self.pensionPa=True
         print("Usted pagó la pensión")
+
     @classmethod
     def cambiarInstitución(cls):
         nueva_institucion = input("Ingrese a que institución quiere cambiarse:")
@@ -73,3 +84,20 @@ class Estudiant:
             print("Usted es mayor de edad")
         else:
             print("Usted es menor de edad")
+            
+    @staticmethod
+    def promedio_notas():
+        cant = int(input("Ingrese la cantidad de notas:"))
+        notas = []
+        for i in range(cant):
+            nota = int(input(f"Ingrese nota {i+1}:"))
+            notas.append(nota)
+        promedio = sum(notas)/cant
+        print("Su promedio es:",promedio)
+    @staticmethod
+    def verificarCorreo():
+        correo = input("Ingrese su correo:")
+        if "@" in correo and "." in correo and "ucsm" in correo:
+            print(f"Su correo {correo} es válido")
+        else:
+            print(f"Su correo {correo} no es válido")

@@ -11,3 +11,8 @@ print("ESTUDIANTES REGISTRADOS")
 for est in lista:
     est.imprimirDatos()
     Estudiant.mayorEdad(est.edad)
+print("MÉTODOS ESTÁTICOS")
+print("Calcular promedio de notas")
+Estudiant.promedio_notas() 
+print("Verificar correo institucional")
+Estudiant.verificarCorreo()
