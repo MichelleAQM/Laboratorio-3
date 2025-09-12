@@ -10,4 +10,3 @@ class Cliente:
         self.__nombre = nombre2
     def mostrar(self):
         return f"{self.__nombre} DNI: {self.__dni}"
-
