@@ -37,7 +37,7 @@ class equipo():
         self.bonificacion = bonificacion
 
     def pantalla(self):
-        print(self.nombre,"recibio una boniciacion de",self.bonificacion,"fuerza")
+        print(self.nombre,"recibio una bonificacion de",self.bonificacion,"fuerza")
 
 class enemigosBrainrots():
     def __init__(self,nombreEnemigo,salud,fuerza):
@@ -51,7 +51,7 @@ class enemigosBrainrots():
         else:
             print("¡Felicidades derrotaste a",self.nombreEnemigo,"!")
             return False
-    # def atarcar
+    # def atacar
 
 class habilidades():
     def __init__(self,nombre,daño):
