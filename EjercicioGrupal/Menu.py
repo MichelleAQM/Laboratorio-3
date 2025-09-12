@@ -22,7 +22,7 @@ def menu_juego():
         print("3. Ver estadísticas del enemigo")
         print("4. Iniciar batalla")
         print("5. Salir")
-        opcion = int(put("Seleccione una opción: "))
+        opcion = int(input("Seleccione una opción: "))
         if opcion == 1:
             print("Estadísticas del Jugador")
             print("Nombre:", jugador.getNombre())
