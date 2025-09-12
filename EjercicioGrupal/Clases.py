@@ -27,6 +27,7 @@ class Personaje():
         if self.salud > 0:
             return True
         else:
+            print(self.nombreJugador,"ha sido derrotado.")
             return False
     #def atacar:
 
@@ -39,8 +40,8 @@ class equipo():
         print(self.nombre,"recibio una boniciacion de",self.bonificacion,"fuerza")
 
 class enemigosBrainrots():
-    def __init__(self,nombreEnemigos,salud,fuerza):
-        self.nombreEnemigos = nombreEnemigos
+    def __init__(self,nombreEnemigo,salud,fuerza):
+        self.nombreEnemigo = nombreEnemigo
         self.salud = salud
         self.fuerza = fuerza
         self.habilidades = []
@@ -48,11 +49,24 @@ class enemigosBrainrots():
         if self.salud > 0:
             return True
         else:
-            print("¡Felicidades derrotaste a",self.nombreEnemigos,"!")
+            print("¡Felicidades derrotaste a",self.nombreEnemigo,"!")
+            return False
     # def atarcar
 
 class habilidades():
     def __init__(self,nombre,daño):
         self.nombre = nombre
         self.daño = daño
+
+class Batalla():
+    def __init__(self,personaje,brainrot):
+        self.personaje = personaje
+        self.brainrot = brainrot
     
+    def inicia(self):
+        print("Empieza la batalla")
+        print(self.personaje.getNombre(),"VS",self.brainrot.nombreEnemigo)
+        while self.personaje.vivo_o_muerto() and self.brainrot.vivo_o_muerto():
+            print(self.personaje.getNombre,"ataco a",self.brainrot.nombreEnemigo)
+            self.brainrot.salud = self.brainrot.salud - self.personaje.fuerza
+            print(self.brainrot.nombreEnemigo,"quedo con",self.brainrot.salud,"de vida")
