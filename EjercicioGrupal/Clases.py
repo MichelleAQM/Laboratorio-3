@@ -55,4 +55,14 @@ class habilidades():
     def __init__(self,nombre,daño):
         self.nombre = nombre
         self.daño = daño
+
+class Batalla():
+    def __init__(self,personaje,brainrot):
+        self.personaje = personaje
+        self.brainrot = brainrot
     
+    def inicia(self):
+        print("Empieza la batalla")
+        print(self.personaje,"VS",self.brainrot)
+        while self.personaje.vivo_o_muerto() and self.brainrot.vivo_o_muerto():
+            
